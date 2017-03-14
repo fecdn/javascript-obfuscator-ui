@@ -19,6 +19,10 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/templates/index.html');
 });
 
+app.get('/ads.js', function (req, res) {
+  res.sendFile(__dirname + '/templates/ads.js');
+});
+
 // function sleep(time) {
 //     var stop = new Date().getTime();
 //     while(new Date().getTime() < stop + time);
