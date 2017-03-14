@@ -3,21 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>JavaScript Obfuscator Tool</title>
-    <meta name="description" content="JavaScript Obfuscator is a free online tool that obfuscates your source code, preventing it from being stolen and used without permission.">
-
-    <link rel="stylesheet" href="/static/dist/stylesheets/main.css" media="screen" title="no title">
-
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-      ga('create', 'UA-86127363-1', 'auto');
-      ga('send', 'pageview');
-    </script>
-
+    <title>JavaScript在线混淆工具（JS加密）</title>
+    <meta name="description" content="一个免费的在线 JS 代码混淆工具，可以混淆您的 Javascript 源码，保护、阻止其被盗用或未经授权的使用。">
+    <meta name="keywords" content="javascript,js,代码,混淆,代码混淆,代码加密,加密,js 代码加密,js代码混淆,javascript代码混淆,javascript代码加密">
+    <link rel="stylesheet" href="//cdn.willin.vip/free/stylesheets/main.css" media="screen" title="no title">
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-33096931-2', 'auto');ga('send', 'pageview');</script>
   </head>
   <body>
 
@@ -26,8 +16,8 @@
       <div class="row">
         <div class="column">
           <div class="ui basic segment">
-            <h1>JavaScript Obfuscator Tool</h1>
-            <p>A free and efficient obfuscator for JavaScript (including ES6). Make your code harder to copy and prevent people from stealing your work. This tool is a Web UI to the excellent (and open source) <a href="https://github.com/javascript-obfuscator/javascript-obfuscator" target="_new">JavaScript Obfuscator</a> created by Timofey Kachalov.</p>
+            <h1>JavaScript 混淆工具</h1>
+            <p>一个免费、高效的 JavaScript（包含 ES6）的混淆器。让您的代码变得难以复制、阻止他人盗用您的作品。</p>
           </div>
         </div>
       </div>
@@ -36,30 +26,49 @@
     <div class="ui message internally celled equal width stackable grid">
       <div class="row">
         <div class="column">
-          <h3>What is this?</h3>
-          <p>This tool transforms your original JavaScript source code into a new representation that's harder to understand, copy, re-use and modify without authorization. The obfuscated result will have the exact functionality of the original code.</p>
+          <h3>这是什么？</h3>
+          <p>这个工具将您的原始 JavaScript 源码转义为一种新的表达，更加难以阅读、复制、复用及未经授权修改。混淆结果将会保持原始代码的确切功能。</p>
+           <p>另外，请先阅读<a href="#Options">参数选项</a>的相关说明，理解代码保护和代码大小/速度之间的所有权衡。</p>
         </div>
         <div class="column">
-          <h3>So, like UglifyJS, Closure Compiler, etc?</h3>
-          <p>Yes and no. While UglifyJS (and others minifiers) does make the output code harder to understand (compressed and ugly), it can be easily be transformed into something readable using a JS Beautifier.</p>
-          <p>This tool prevents that by using various transformations and "traps", such as <strong>self-defending</strong> and <strong>debug protection</strong>.</p>
+          <h3>与UglifyJS, Closure Compiler相似吗？</h3>
+          <p>是也不是。UglifyJS（和其他压缩工具）让输出的代码更难以理解（压缩、丑化），但依然可以使用 JS 美化工具轻松转成方便阅读的代码。</p>
+          <p>T该工具通过使用各种变换和“陷阱”来防止这种情况，例如<strong>自我防御</strong>和<strong>调试保护</strong>。</p>
         </div>
         <div class="column">
-          <h3>How does the obfuscation works?</h3>
-          <p>Through a series of transformations, such as variable / function / arguments renaming, strings removal, and others, your source code is transformed into something unreadable, while working exatcly as before.</p>
-          <p><a href="#FAQ">Read more in the FAQ...</a></p>
+          <h3>如何混淆的？</h3>
+          <p>通过一系列变换，例如变量/函数/参数重命名，字符串删除和其他操作，您的源代码被转换为不可读的东西，同时能够像以前一样工作。</p>
+          <p><a href="#FAQ">常见问题解答...</a></p>
         </div>
         <div class="column">
-          <h3>Sounds great!</h3>
-          <p>Just paste your code or upload it below and click on "obfuscate".</p>
-          <p>Also, be sure to read about <a href="#Options">all the options</a> to understand all the trade-offs between code protection and code size / speed.</p>
+          <h3>支持赞助</h3>
+          <img src="//cdn.willin.vip/donate/alipay.png" alt="支付宝" style="width:160px;">
+          <img src="//cdn.willin.vip/donate/wx.png" alt="微信" style="width:160px;">
         </div>
       </div>
 
     </div>
 
     <div class="ui container grid">
-
+      <div class="row">
+        <div class="column">
+          <div id="stop-adblock" class="ui icon message" style="display: none;">
+            <i class="notched circle loading icon"></i>
+            <div class="content">
+              <div class="header">
+                请关闭广告屏蔽插件再进行操作
+              </div>
+              <p>生存不易，谢谢您的理解与支持。</p>
+            </div>
+          </div>
+          <!-- 自适应 -->
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-5059418763237956"
+              data-ad-slot="9518721243"
+              data-ad-format="auto"></ins>
+        </div>
+      </div>
       <div class="row">
         <div class="column">
           <div class="" id="root">
@@ -74,40 +83,40 @@
             <tbody>
 
               <tr>
-                <td class="collapsing">Compact Code</td>
+                <td class="collapsing">压缩代码</td>
                 <td>
-                  Removes line breaks from the output obfuscated code.
+                  从输出混淆代码中删除换行符。
                 </td>
               </tr>
 
               <tr>
-                <td class="collapsing">Self Defending</td>
+                <td class="collapsing">自我保护</td>
                 <td>
-                  <p>This option makes the output code resilient against formating and variable renaming. If one tries to use a JavaScript beautifier on the obfuscated code, the code won't work anymore, making it harder to understand and modify it.</p>
-                  <p><small>requires the <strong>Compact Code</strong> setting.</small></p>
+                  <p>此选项使输出代码对形式化和变量重命名具有弹性。如果试图在混淆代码上使用JavaScript美化程序，代码将不再工作，使其更难理解和修改它。</p>
+                  <p><small>前置条件 <strong>压缩代码</strong> 须开启。</small></p>
                 </td>
               </tr>
 
               <tr>
-                <td class="collapsing">Control Flow Flattening</td>
+                <td class="collapsing">控制流扁平化</td>
                 <td>
 
                   <div class="ui tiny message">
-                    <p><i class="warning sign icon"></i> This option greatly affects the performance up to 1.5x slower runtime speed.</p>
+                    <p><i class="warning sign icon"></i> 此选项极大影响性能，高达1.5x运行速度缓慢。</p>
                   </div>
 
                   <p>
-                    Enables code control flow flattening. Control flow flattening is a structure transformation of the source code that hinders program comprehension. See the docs on <a href="https://github.com/javascript-obfuscator/javascript-obfuscator#controlflowflattening" target="_new">JavaScript's obfuscator GH page</a> for an example of how the transformation works.
+                    启动代码控制流扁平化，阻碍程序理解的源代码的结构变换。非专业人士建议忽略该选项。
                   </p>
 
                   <table class="ui definition table">
                     <tbody>
 
                       <tr>
-                        <td class="collapsing">Control Flow Flattening Threshold</td>
+                        <td class="collapsing">代码控制流扁平化阈</td>
                         <td>
-                          <p>You can use this setting to adjust the probability (from 0 to 1) that a <code>controlFlowFlattening</code> transformation will be applied to a node.</p>
-                          <p>In larger codebases it's advised to lower this value, because larger amounts of control flow transformations can increase the size of your code and slow it down.</p>
+                          <p>您可以使用此设置来调整<code>controlFlowFlattening</code> 应用于节点的转换的概率（从0到1）。</p>
+                          <p>在更大的代码库中，建议降低该值，因为更大量的控制流转换可以增加代码的大小并减慢速度。</p>
                         </td>
                       </tr>
 
@@ -120,46 +129,45 @@
               <tr>
                 <td class="collapsing">Seed</td>
                 <td>
-                  <p>By default (<code>seed = 0</code>), each time you obfuscate your code you'll get a new result (i.e: different variable names, different variables inserted into the <code>stringArray</code>, etc). If you want repeatable results, set the <code>seed</code> to a specific integer.</p>
+                  <p>默认情况下（<code>seed = 0</code>），每次模糊你的代码，你会得到一个新的结果（即：不同的变量名，不同的变量插入<code>stringArray</code>，等）。如果要获得可重复的结果，请将其<code>seed</code>设置为特定的整数。
                 </td>
               </tr>
 
               <tr>
-                <td class="collapsing">String Array</td>
+                <td class="collapsing">字符串数组</td>
                 <td>
                   <p>
-                    Removes string literals and place them in a special array. For instance the string "Hello World" in <code>var m = "Hello World";</code> will be replaced to a call to a function that will retrieve its value at runtime, e.g: <code>var m = _0xb0c3('0x1');</code>
+                    删除字符串文字并将其放置在特殊数组中。例如，<code>var m = "Hello World";</code>中字符串“Hello World”将被替换为对在运行时检索其值的函数的调用，如：<code>var m = _0xb0c3('0x1');</code>
                   </p>
-
-                  <p>See the options below on how to configure this feature be more or less resilient.</p>
+                  <p>有关如何配置此功能的更多或更少的弹性，请参阅下面的选项。</p>
 
                   <table class="ui definition table">
                     <tbody>
 
                       <tr>
-                        <td class="collapsing">Rotate String Array</td>
+                        <td class="collapsing">旋转字符串数组</td>
                         <td>
-                          <p>Shift the <code>stringArray</code> array by a fixed and random (generated at the code obfuscation) places. This makes it harder to match the order of the removed strings to their original place.</p>
-                          <p>This option is recommended if your original source code isn't small, as the helper function can attract attention.</p>
+                          <p><code>stringArray</code> 通过固定和随机（在代码混淆处生成）位置移动数组。这使得难以将删除的字符串的顺序与其原始位置相匹配。</p>
+                          <p>如果您的原始源代码不小，建议使用此选项，因为帮助函数可以引起注意。</p>
                         </td>
                       </tr>
 
                       <tr>
-                        <td class="collapsing">Encode String Literals</td>
+                        <td class="collapsing">字符串数组编码</td>
                         <td>
                           <div class="ui tiny message">
-                            <p><i class="warning sign icon"></i> This option can slightly slow down your script.</p>
+                            <p><i class="warning sign icon"></i> 此选项可能会稍微减慢您的脚本。</p>
                           </div>
-                          <p>Encode all string literals of the <code>stringArray</code> using either Base64 or RC4 and inserts a special function that it's used to decode it back at runtime.</p>
-                          <p>Beware that the RC4 option is about 30-35% slower than the Base64 option, but it's more difficult to retrieve the strings back.</p>
+                          <p><code>stringArray</code> 使用Base64或RC4 编码所有字符串文字，并插入一个特殊函数，用于在运行时将其解码。</p>
+                          <p>注意，RC4选项比​​Base64选项慢大约30-35％，但是更难以检索字符串。</p>
                         </td>
                       </tr>
 
                       <tr>
-                        <td class="collapsing">String Array Threshold</td>
+                        <td class="collapsing">字符串数组阈</td>
                         <td>
-                          <p>You can use this setting to adjust the probability (from 0 to 1) that a string literal will be inserted into the <code>stringArray</code>.</p>
-                          <p>This setting is useful in large codebases as repeatdely calls to the <code>stringArray</code> function can slow down your code.</p>
+                          <p>您可以使用此设置来调整将字符串文字插入到的概率（从0到1）。</p>
+                          <p>此设置在大型代码库中很有用，因为对字符串数组函数的重复调用可能会降低代码速度。</p>
                         </td>
                       </tr>
 
@@ -170,28 +178,28 @@
               </tr>
 
               <tr>
-                <td class="collapsing">Disable Console Output</td>
+                <td class="collapsing">禁止 Console 输出</td>
                 <td>
-                  Disables the use of <code>console.log</code>, <code>console.info</code>, <code>console.error</code> and <code>console.warn</code> by replacing them with empty functions. This makes the use of the debugger harder.
+                  禁止使用<code>console.log</code>, <code>console.info</code>, <code>console.error</code> 和 <code>console.warn</code>，用空函数替换它们。这使得Debug调试器的使用更加困难。
                 </td>
               </tr>
 
               <tr>
-                <td class="collapsing">Debug Protection</td>
+                <td class="collapsing">Debug 保护</td>
                 <td>
                   <div class="ui tiny message">
-                    <p><i class="warning sign icon"></i> Can freeze your browser if you open the Developer Tools.</p>
+                    <p><i class="warning sign icon"></i> 如果您打开开发人员工具，可以冻结浏览器。</p>
                   </div>
-                  <p>This option makes it almost impossible to use the <strong>Console</strong> tab of the Developer Tools (both on Google Chrome and Mozilla Firefox).</p>
+                  <p>此选项使您无法使用开发人员工具（在Google Chrome和Mozilla Firefox上）的“<strong>Console</strong>”标签。</p>
 
                   <table class="ui definition table">
                     <tbody>
 
                       <tr>
-                        <td class="collapsing">Debug Protection Interval</td>
+                        <td class="collapsing">Debug 保护间隔</td>
                         <td>
-                          <p>If checked, an interval is used to force the debug mode on the <strong>Console</strong> tab, making it harder to use other features of the Developer Tools.</p>
-                          <p>How does it works? A special code that calls <code>debugger;</code> repeatedly is inserted throughout the obfuscated source code.</p>
+                          <p>如果选中，将使用一个间隔在“<strong>Console</strong>”选项卡上强制调试模式，从而更难使用开发工具的其他功能。</p>
+                          <p>它如何工作？反复调用特殊代码<code>debugger;</code> 插入到整个混淆的源代码。</p>
                         </td>
                       </tr>
 
@@ -202,19 +210,19 @@
               </tr>
 
               <tr>
-                <td class="collapsing">Domain Lock</td>
+                <td class="collapsing">域名锁定</td>
                 <td>
-                  <p>Locks the obfuscated source code so it only runs on specific domains and/or sub-domains. This makes really hard for someone just copy and paste your source code and run elsewhere.</p>
-                  <strong>Multiple domains and sub-domains</strong>
-                  <p>It's possible to lock your code to more than one domain or sub-domain. For instance, to lock it so the code only runs on <strong>www.example.com</strong> add <code>www.example.com</code>, to make it work on <strong>any sub-domain from example.com</strong>, use <code>.example.com</code>.</p>
+                  <p>锁定混淆的源代码，使其只能在特定域和/或子域上运行。这使得真的很难为某人只是复制和粘贴您的源代码和运行在其他地方。</p>
+                  <strong>多个域名和子域名</strong>
+                  <p>可以将代码锁定到多个域名或子域名。例如，要锁定代码，使代码只在<strong>www.example.com</strong>上运行，要使其在<strong>example.com</strong>的任何子域中使用，请使用<code>.example.com</code>。</p>
                 </td>
               </tr>
 
               <tr>
-                <td class="collapsing">Reseverd Names</td>
+                <td class="collapsing">保留关键词</td>
                 <td>
-                  <p>Disables the obfuscation of variables names, function names and function parameters that match the Regular Expression used.</p>
-                  <p>For instance, if you add <code>^someName</code>, the obfuscator will ensure that all variables, function names and function arguments that starts with <strong>someName</strong> will not get mangled.</p>
+                  <p>禁用与使用的正则表达式匹配的变量名称，函数名称和函数参数的混淆。</p>
+                  <p>举例来说，如果添加<code>^someName</code>，混淆器将确保开头的所有变量，函数名和函数参数<strong>someName</strong>不会被混淆。</p>
                 </td>
               </tr>
 
@@ -222,20 +230,20 @@
                 <td class="collapsing">Source Map</td>
                 <td>
                   <div class="ui tiny message">
-                    <p><i class="warning sign icon"></i> Be sure not to upload the obfuscated source code with the inline source map embedded on it, as it contains your original source code.</p>
+                    <p><i class="warning sign icon"></i>  确保不要上传嵌入了Source Map的混淆源代码，因为它包含您的原始源代码。</p>
                   </div>
 
-                  <p>Source maps can be useful to help you debug your obfuscated Java Script source code. If you want or need to debug in production, you can upload the separate source map file to a secret location and then point your browser there. <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps" target="_new">Read more about source maps on the Google Chrome Developer Tools website</a>.</p>
+                  <p>源映射可以帮助您调试模糊的Java Script源代码。如果您想要或需要在生产中调试，您可以将单独的源映射文件上传到一个秘密位置，然后将浏览器指向那里。<a href="https://developers.google.com/web/tools/chrome-devtools/javascript/source-maps" target="_new">在Google Chrome开发人员工具网站上详细了解Source Map</a>。</p>
 
-                  <strong>Inline Source Map</strong>
-                  <p>This embeds the source map of your source in the result of the obfuscated code. Useful if you just want to debug locally on your machine.</p>
+                  <strong>内联源映射（Inline Source Map）</strong>
+                  <p>这会将源的源映射嵌入到模糊代码的结果中。如果你只想在本地调试机器上有用。</p>
 
-                  <strong>Separate Source Map</strong>
-                  <p>This generates a separate file with the source map. Useful to debug code in production, as this enables you to upload the source map to a secret location on your server and then point your browser to use it.</p>
+                  <strong>单独源映射(Separate Source Map)</strong>
+                  <p>这将使用源映射生成单独的文件。用于在生产中调试代码，因为这使您能够将源映射上传到服务器上的秘密位置，然后指向浏览器使用它。</p>
 
-                  <p>Use the <strong>Source Map Base URL</strong> and <strong>Source Map File Name</strong> to customize the <code>sourceMappingURL</code> property that will get appended to the end of your obfuscated code.</p>
+                  <p>使用<strong>Source Map Base URL</strong> 和 <strong>Source Map 文件名</strong> 来自定义 <code>sourceMappingURL</code> 将被附加到模糊代码末尾的属性。</p>
 
-                  <p>For instance, if you set the <strong>Base URL</strong> to <code>"http://localhost:9000"</code> and <strong>File Name</strong> to <code>"example"</code>, you'll get: <code>//# sourceMappingURL=http://localhost:9000/example.js.map</code>. appended to the end of your obfuscated code.</p>
+                  <p>例如，如果你设置 <strong>Base URL</strong> 为 <code>"http://localhost:9000"</code> 和 <strong>文件名</strong> 为 <code>"example"</code>，你会得到： <code>//# sourceMappingURL=http://localhost:9000/example.js.map</code>。附加到加密代码的末尾。</p>
 
                 </td>
               </tr>
@@ -245,50 +253,45 @@
 
         </div> <!-- column -->
       </div> <!-- row -->
-
       <div class="row">
         <div class="column">
-          <h3 id="FAQ">FAQ</h3>
-
-          <h4>Why would I want to obfuscate my JavaScript code?</h4>
-          <p>There're a numerous reasons why it's a good idea to protect your code, such as:</p>
+          <!-- 自适应 -->
+          <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-5059418763237956"
+              data-ad-slot="9518721243"
+              data-ad-format="auto"></ins>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <h3 id="FAQ">常见问题 FAQ</h3>
+          <h4>为什么要加密JavaScript代码？</h4>
+          <p>保护您的代码是一个好主意，这样做有众多原因，例如：</p>
           <ul>
-            <li>Prevent anyone from simply copy/pasting your work. This is specially important on 100% client side projects, such as HTML5 games;</li>
-            <li>Removal of comments and whitespace that aren't needed. Making it faster to load and harder to understand;</li>
-            <li>Protection of work that hasn't been paid yet. You can show your work to the client knowing that they won't have the source code until the invoice has been paid.</li>
+            <li>防止任何人简单地复制/粘贴您的工作。这对于100％客户端项目（如HTML5游戏）尤其重要;</li>
+            <li>删除不需要的注释和空格。使加载更快，更难理解;</li>
+            <li>保护尚未支付的工作。您可以向客户显示您的工作，因为他们知道他们将不会有源代码，直到发票已支付。</li>
           </ul>
 
-          <h4>Is this obfuscator absolutely foolproof?</h4>
-          <p>No, while it's impossible to recover the exact original source code, someone with the time, knowledge and patience can reverse-engineer it.</p>
-          <p>Since the JavaScript runs on the browser, the browser's JavaScript engine must be able to read and interpret it, so there's no way to prevent that. And any tool that promises that is not being honest.</p>
+          <h4>这个混淆器绝对万无一失？</h4>
+          <p>不，虽然不可能恢复确切的原始源代码，有时间，知识和耐心的人可以逆向工程。</p>
+          <p>由于JavaScript在浏览器上运行，浏览器的JavaScript引擎必须能够读取和解释它，因此没有办法阻止。任何承诺的工具不是诚实的。</p>
 
-          <h4>Why my obfuscated code is larger than my original source?</h4>
-          <p>Because the obfuscator introduces new pieces of code that are meant to protect and defend against debugging and reverse-engineering. Also strings are converted to <code>\xAB</code> hexadecimal code to make things a little bit harder to understand. You don't have to worry too much about code size because since there're a lot of repetition, the obfuscated code will be compressed extremely well by your webserver (if you have GZIP compression enabled on your server, which most do nowadays).</p>
+          <h4>为什么我的混淆代码大于我的原始来源？</h4>
+          <p>因为混淆器引入了旨在保护和防御调试和逆向工程的新代码。另外，字符串被转换为<code>\xAB</code>十六进制代码，使事情有点难以理解。你不必担心代码大小，因为有很多重复，被混淆的代码将被你的网络服务器压缩得非常好（如果你的服务器上启用了GZIP压缩，现在大多数）。</p>
 
-          <h4>Can I run a minifier such as UglifyJS or Google Closure Compiler on the obfuscated output?</h4>
-          <p>No, it's not recommended and in some cases it'll break the code (such as if you enable <strong>self-defending</strong>). You can run your code through a minifier before to make sure that it removes dead code and do other optimizations, though.</p>
+          <h4>我可以在模糊输出上运行一个minifier如UglifyJS或Google Closure Compiler？</h4>
+          <p>不，不推荐，在某些情况下，它会破坏代码（例如，如果你启用了<strong>自我保护</strong>）。你可以运行你的代码通过minifier之前，以确保它删除死代码和做其他优化。</p>
 
-          <h4>Do you store my source code?</h4>
-          <p>No. The source is processed by our application server, then to the obfuscator and back to the browser, so it only stays on our server memory for a brief period of time (usually milliseconds). </p>
+          <h4>你存储我的源代码吗？</h4>
+          <p>不。源代码由我们的应用程序服务器处理，然后到混淆器并返回浏览器，所以它只在我们的服务器内存上保留一段短暂的时间（通常是毫秒）。</p>
 
-          <h4>Can I recover the original source code from the obfuscated one?</h4>
-          <p>No, it's impossible to revert the obfuscated code back to your original code, so keep the original safe.</p>
+          <h4>我可以从混淆的恢复原始的源代码吗？</h4>
+          <p>不，不可能将模糊代码还原为原始代码，因此请保持原始代码的安全。</p>
 
-          <h4>Does this tool works with Node.js source code?</h4>
-          <p>Yes.</p>
-
-          <h4>I want to run the obfuscator on my own server/machine. Is it possible?</h4>
-          <p>Sure. This tool uses a free and open source (BSD-2-Clause licensed) obfuscator written in TypeScript. You can go to <a href="https://github.com/javascript-obfuscator/javascript-obfuscator" target="_new">its GitHub page</a> and read more there.</p>
-          <p>There are also a number of plugins, such as: <a href="https://github.com/javascript-obfuscator/webpack-obfuscator">webpack-obfuscator</a>, <a href="https://github.com/javascript-obfuscator/gulp-javascript-obfuscator">gulp-javascript-obfuscator</a> and <a href="https://github.com/javascript-obfuscator/grunt-contrib-obfuscator">grunt-contrib-obfuscator</a>.
-          <p>Also, this web app is open-source as well. <a href="https://github.com/javascript-obfuscator/javascript-obfuscator-ui">Check out our GitHub</a>.</p>
-
-          <h4>Why did you do this tool?</h4>
-          <p>Creating a tool that solves a small, particular problem is a great way to get targeted users and in the future this might be useful to attract users to a new service or product.</p>
-          <p>Besides, for some users installing the whole Node environment can be hard and time-consuming, specially if they're not used to typing things in the terminal and/or using Windows. So now they don't have to deal with that just to get a small piece of code protected.</p>
-          <p>I also wanted to learn React + Redux and this was the perfect excuse: a small, side-project that can run with minimal maintenance.</p>
-
-          <h4>What are other similar tools?</h4>
-          <p>If you're interested in just uglyfing and compressing your code, I suggest <a href="https://jscompress.com/" target="_new">JSCompress.com</a>. I shamelessly copied three tabs layout from them.</p>
+          <h4>此工具是否可以与Node.js源代码一起使用？</h4>
+          <p>可以。</p>
 
         </div>
       </div>
@@ -296,13 +299,19 @@
       <div class="row">
         <div class="column">
           <div class="ui divider"></div>
-          <span>&copy; <a href="mailto:tserafim@gmail.com">Tiago Serafim</a> - <a href="https://github.com/javascript-obfuscator/javascript-obfuscator-ui">source-code</a> - Powered by <a href="https://github.com/javascript-obfuscator/javascript-obfuscator">JavaScript Obfuscator</a></span>
+          <span>&copy; 2017 - JS.WILLIN.VIP
+          <a href="http://www.miibeian.gov.cn/" target="_blank">苏ICP备17011988号</a>
+          服务商：<a href="https://s.click.taobao.com/jLHDRyw" target="_blank">阿里云</a>
+          </span>
         </div>
       </div>
 
     </div>
 
-    <script src="/static/dist/bundle.js"></script>
+    <!--<script src="//cdn.willin.vip/free/ads.js"></script>-->
+    <script src="http://www.detectadblock.com/ads.js"></script>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>if(document.getElementById('zjeHqFhuNYwL')){var head=document.getElementsByTagName('head')[0];var script=document.createElement('script');script.type='text/javascript';script.onload=script.onreadystatechange=function(){if(!this.readyState||this.readyState==="loaded"||this.readyState==="complete"){help();script.onload=script.onreadystatechange=null}};script.src='//cdn.willin.vip/free/bundle.js';head.appendChild(script);}else{document.getElementById('stop-adblock').style.display="flex";}(adsbygoogle = window.adsbygoogle || []).push({});(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   </body>
 </html>

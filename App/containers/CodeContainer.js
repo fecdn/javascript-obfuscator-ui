@@ -81,9 +81,9 @@ class CodeContainer extends Component {
       <div>
 
         <div className="ui top attached tabular menu">
-          <Title active={tabIndex === TAB_CODE} onClick={() => this.onTabClick(TAB_CODE)}>Copy & Paste JavaScript Code</Title>
-          <Title active={tabIndex === TAB_UPLOAD} onClick={() => this.onTabClick(TAB_UPLOAD)}>Upload JavaScript Files</Title>
-          <Title active={tabIndex === TAB_RESULTS} onClick={() => this.onTabClick(TAB_RESULTS)}>Output</Title>
+          <Title active={tabIndex === TAB_CODE} onClick={() => this.onTabClick(TAB_CODE)}>复制/粘贴 JavaScript 代码</Title>
+          <Title active={tabIndex === TAB_UPLOAD} onClick={() => this.onTabClick(TAB_UPLOAD)}>上传 JavaScript 文件</Title>
+          <Title active={tabIndex === TAB_RESULTS} onClick={() => this.onTabClick(TAB_RESULTS)}>输出/下载</Title>
         </div>
 
         <Pane active={tabIndex === TAB_CODE}>
@@ -95,14 +95,14 @@ class CodeContainer extends Component {
               primary
               onClick={onObfuscateClick}
               >
-                Obfuscate
+                代码加密
             </Button>
           </Segment>
         </Pane>
 
         <Pane active={tabIndex === TAB_UPLOAD}>
           <Dropzone onDrop={::this.onDrop} multiple={false} className="DropZone">
-            <div>Try dropping some files here, or click to select files to upload.</div>
+            <div>文件拖拽到此处，或单击选择文件进行上传。</div>
           </Dropzone>
         </Pane>
 
@@ -118,13 +118,13 @@ class CodeContainer extends Component {
               disabled={!hasObfuscatedCode}
               onClick={onDownloadCodeClick}
               >
-                <Icon name='download' /> Download obfuscated code
+                <Icon name='download' /> 下载加密代码
             </Button>
             { hasSourceMap &&
             <Button
               onClick={onDownloadSourceMapClick}
               >
-                <Icon name='download' /> Download source map file
+                <Icon name='download' /> 下载 source map 文件
             </Button>
             }
           </Segment>

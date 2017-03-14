@@ -10,7 +10,7 @@ process.env.PWD = process.cwd();
 
 app.set('port', (process.env.PORT || 3000));
 
-app.use(bodyParser.json({limit: '3mb'}));
+app.use(bodyParser.json({limit: '2mb'}));
 
 app.use('/static/dist', express.static(__dirname + '/dist'));
 app.use('/static/semantic', express.static(__dirname + '/public/semantic'));
