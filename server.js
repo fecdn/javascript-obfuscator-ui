@@ -8,7 +8,7 @@ var app = express();
 process.env.PWD = process.cwd();
 
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 4128));
 
 app.use(bodyParser.json({limit: '2mb'}));
 
@@ -17,10 +17,6 @@ app.use('/static/semantic', express.static(__dirname + '/public/semantic'));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/templates/index.html');
-});
-
-app.get('/ads.js', function (req, res) {
-  res.sendFile(__dirname + '/templates/ads.js');
 });
 
 // function sleep(time) {
